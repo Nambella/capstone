@@ -14,3 +14,15 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'recipes_project.settings')
 
 application = get_wsgi_application()
+import os
+import sys
+
+sys.path.append('/home/pthiopia/recipes_project')
+sys.path.append('/home/pthiopia/recipes_project/recipes_project')
+
+# Set the settings module
+os.environ['DJANGO_SETTINGS_MODULE'] = 'recipes_project.settings'
+
+# Import and set up the application
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
