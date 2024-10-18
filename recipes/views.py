@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Recipe, User
 from .serializers import RecipeSerializer, UserSerializer
+from django.http import HttpResponse
 
 class RecipeListCreate(generics.ListCreateAPIView):
     queryset = Recipe.objects.all()
@@ -19,4 +20,7 @@ class UserListCreate(generics.ListCreateAPIView):
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+from django.http import HttpResponse
 
+def recipes_list(request):
+    return HttpResponse("Here will be the recipes.")
